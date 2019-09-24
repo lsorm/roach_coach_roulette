@@ -6,10 +6,9 @@
         <meta name="description" content="Demonstration of Django Apps and Sessions">
        
         {% load static %}
-        Hello
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="{% static 'options.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'roulette/options.css' %}">
 
         <!-- Required meta tags -->
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,9 +19,9 @@
             <h1>You'll be eating in no time.</h1>
             <div>
                 <h3>Choose a distance:</h3>
-                <div class='option'></div>
-                <div class='option'></div>
-                <div class='option'></div>
+                <div class='option category'></div>
+                <div class='option category'></div>
+                <div class='option category'></div>
             </div>
             <!-- Optional JavaScript -->
             <!-- jQuery first, then Popper.js, then Bootstrap JS -->

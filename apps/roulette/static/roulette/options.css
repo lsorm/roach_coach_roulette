@@ -1,3 +1,18 @@
-body{
-    background-color: blue;
+
+.option{
+    width: 4em;
+    height: 4em;
+    display: inline-block;
+}
+
+.category{
+    background-color: firebrick;
+}
+
+.cost{
+    background-color: green;
+}
+
+.distance{
+    background-color: teal;
 }
