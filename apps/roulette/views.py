@@ -18,7 +18,7 @@ def resultsDisplay(request):
 def viewInfo(request):
     return render (request, 'view.html')
 
-def GoBack(request):
+def goBack(request):
     return redirect ('/')
 
 def loginReg(request):
@@ -32,4 +32,3 @@ def dashboard(request):
 
 def editFaves(request):
     return redirect ('/dashboard')
-
