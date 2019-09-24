@@ -14,7 +14,14 @@ body, html{
 	opacity: .85;
 }
 
-header{
+.logo{
+	width: 40px;
+	display: inline-block;
+	margin: 5px;
+	vertical-align: top;
+}
+
+.header{
 	background-color: rgb(37, 37, 37);
 	padding: 5px;
 	font-family: sans-serif;
@@ -25,12 +32,15 @@ header{
 
 h2 {
 	color: white;
+	text-align: left;
+	display: inline-block;
+	margin: 5px 0px;
 }
 
 .container{
 	width: 1200px; 
 	margin: 0px auto;
-	padding: 100px;
+	padding: 95px;
 }
 
 .side_container{
@@ -43,16 +53,13 @@ h1{
 	font-family: "Arial", "Verdan", sans-serif;
 }
 
-.side_container{
-	padding: 15px;
-}
-
 .mid_section{
 	text-align: center;
 }
 
 a{
 	text-decoration: underline;
+	margin-left: 500px;
 }
 
 h3{
@@ -69,7 +76,7 @@ h5{
 .btn{
 	display: block;
 	height: 60px;
-	width: 100%;
+	width: 90%;
 	height: 150px;
 	margin-top: 50px;
 	font-size: 50px;
