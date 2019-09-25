@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Login Page</title>
+    <script src="https://use.fontawesome.com/74ea2e5771.js"></script>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <Style>
+        * {
+            outline: 0px dotted red;
+            margin: 0px;
+        }
+
+        .side_container {
+            width: 45%;
+            display: inline-block;
+        }
+
+        .main {
+            width: 900px;
+            margin: 0px auto;
+        }
+
+        html,
+        body {
+            height: 100%;
+            background-image: linear-gradient(white, rgb(151, 204, 241))
+        }
+
+        .logo {
+            width: 40px;
+            display: inline-block;
+            margin: 5px;
+            vertical-align: top;
+        }
+
+        .header {
+            background-color: rgb(37, 37, 37);
+            padding: 5px;
+            font-family: sans-serif;
+        }
+
+        .header h2 {
+            color: white;
+            text-align: left;
+            display: inline-block;
+            margin: 5px 0px;
+        }
+
+        h1 {
+            margin: 20px 0px;
+            font-size: 25px;
+            font-family: "Arial", "Verdan", sans-serif;
+        }
+
+        .left {
+            width: 500px;
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .right {
+            width: 350px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        h2 {
+            margin: 20px 0px;
+        }
+
+        ul {
+            color: red;
+        }
+
+        .btn {
+            margin-top: 30px;
+            box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
+        }
+    </Style>
+</head>
+
+<body>
+    <nav class="header">
+        <div class="side_container">
+            <img class="logo" src="{% static 'images/roach.png'%}" alt="logo">
+            <h2>ROACH COACH ROULETTE</h2>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="main">
+            <div class="left">
+                <h1> REGISTRATION</h1>
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                <Form method="POST" action="/newUser">
+                    {% csrf_token %}
+                    <h3>First Name</h3>
+                    <input type="text" name="first_name" class="form-control" placeholder="First Name" aria-label=""
+                        aria-describedby="basic-addon1">
+                    <h3>Last Name</h3>
+                    <input type="text" name="last_name" class="form-control" placeholder="Last Name" aria-label=""
+                        aria-describedby="basic-addon1">
+                    <h3>Email</h3>
+                    <input type="text" name="email" class="form-control" placeholder="Email" aria-label=""
+                        aria-describedby="basic-addon1">
+                    <h3>Password</h3>
+                    <input type="password" name="password" class="form-control" placeholder="Password" aria-label=""
+                        aria-describedby="basic-addon1">
+                    <h3>Confirm PW</h3>
+                    <input type="password" name="confirm_PW" class="form-control" placeholder="Confirm PW" aria-label=""
+                        aria-describedby="basic-addon1">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
+            </div>
+            <div class="right">
+                <form method="POST" action="/login">
+                    {% csrf_token %}
+                    <h1>LOGIN</h1>
+                    <h3>Email</h3>
+                    <input type="text" name="email" class="form-control" placeholder="Email" aria-label=""
+                        aria-describedby="basic-addon1">
+                    <h3>Password</h3>
+                    <input type="password" name="password" class="form-control" placeholder="Password" aria-label=""
+                        aria-describedby="basic-addon1">
+                    <button type="submit" class="btn btn-primary">Log In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
