@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
-    <title>Loggin Page</title>
-    <!-- {% load static %} -->
-    <!-- <link rel="stylesheet" href="{% static 'styles.css' %}"> -->
+    <title>Login Page</title>
+    <script src="https://use.fontawesome.com/74ea2e5771.js"></script>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 
 </head>
+
 <body>
-<h1>Hello Roach Coach!!!</h1>
+    <div class="container-fluid">
+        <nav class="navbar fixed-top navbar-dark bg-primary">
+            <h2>ROACH COACH ROULETTE</h2>
+            <a class="navbar-brand" href="#!">Log In</a>
+        </nav>
+    </div>
+
+    </header>
+    <div class="container">
+        <div class="top_section">
+            <h5>We've all been there. It's time to get some gub and we have no idea where to spend our hard earned cash.
+                Other sites overload us with too many options. Roach Coach Roulette narrows down the choices so you can
+                get to grubbin' without all the fussin'. </h5>
+        </div>
+        <div class="mid_section">
+            <div class="side_container">
+                <button type="button" class="btn btn-secondary">Help me pick...</button>
+                <p>(I've got an idea but need help)</p>
+
+            </div>
+            <div class="side_container">
+                <button type="button" class="btn btn-secondary">Pick for me!</button>
+                <p>(I have no idea what to eat)</p>
+            </div>
+        </div>
+        <div class="bottom">
+            <i class="fas fa-carrot"></i>
+        </div>
+    </div>
+
+
 </body>

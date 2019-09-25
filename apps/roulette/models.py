@@ -1,3 +1,57 @@
 from django.db import models
+import re
+import bcrypt
 
-# Create your models here.
+class UserManager(models.Manager):
+    def basic_validator(self, postData):
+        errors = {}
+        if len(postData["first_name"]) <2:
+            errors["first_name"]= "First Name should be at least 2 characters"
+
+        if len(postData["last_name"]) <2:
+            errors["last_name"]= "Last Name should be at least 2 characters"
+
+        if len(postData["password"]) <8:
+            errors["password"]= "Password is too short!!!"
+
+        EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
+        if not EMAIL_REGEX.match(postData['email']):
+            errors['email'] = ("Invalid email address!")
+
+        if postData["confirm_PW"] != postData["password"]:
+            errors["password"]="Password does not match!!"
+
+        return errors
+
+    def login_validator(self, postData):
+        errors = {}
+
+        EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
+        if not EMAIL_REGEX.match(postData['email']):
+            errors['email'] = ("Invalid email address!")
+
+        if len(postData["password"]) <8:
+            errors["password"]= "Password is too short!!!"
+
+        return errors
+
+class User(models.Model):
+    # Needs a many to many field for the likes
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    email = models.CharField(max_length=255)
+    username =  models.CharField(max_length=255)
+    password = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    objects = UserManager()
+
+class Restaurant(models.Model):
+    # Needs a many to many field for the likes
+    name = models.CharField(max_length=255)
+    desc = models.CharField(max_length=255)
+    location = models.CharField(max_length=255)
+    users = models.ManyToManyField (User, related_name ="favorites")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    objects = UserManager()
