@@ -35,8 +35,8 @@ class UserManager(models.Manager):
 
         return errors
 
+
 class User(models.Model):
-    # Needs a many to many field for the likes
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
@@ -47,11 +47,16 @@ class User(models.Model):
     objects = UserManager()
 
 class Restaurant(models.Model):
-    # Needs a many to many field for the likes
     name = models.CharField(max_length=255)
     desc = models.CharField(max_length=255)
     location = models.CharField(max_length=255)
     users = models.ManyToManyField (User, related_name ="favorites")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    objects = UserManager()
+
+class Note(models.Model):
+    content = models.TextField()
+    user = models.ForeignKey(User, related_name="notes", on_delete=models.CASCADE)
+    restaurant=models.ForeignKey(Restaurant, related_name="restaurant_name", on_delete=models.CASCADE )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
