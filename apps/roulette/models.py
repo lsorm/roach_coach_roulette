@@ -36,6 +36,7 @@ class UserManager(models.Manager):
         return errors
 
 class User(models.Model):
+    # Needs a many to many field for the likes
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
@@ -46,6 +47,7 @@ class User(models.Model):
     objects = UserManager()
 
 class Restaurant(models.Model):
+    # Needs a many to many field for the likes
     name = models.CharField(max_length=255)
     desc = models.CharField(max_length=255)
     location = models.CharField(max_length=255)
