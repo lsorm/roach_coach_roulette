@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Results</title>
+    <script src="https://kit.fontawesome.com/532d5492ff.js" crossorigin="anonymous"></script>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'results_style.css' %}">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar fixed-top navbar-dark bg-primary">
+            <h2>ROACH COACH ROULETTE</h2>
+            <div>
+                <a class="navbar-brand" href="#!">Dashboard</a>
+                <a class="navbar-brand" href="#!">Log In</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="top">
+            <h1>RESULTS</h1>
+        </div>
+        <div class="mid_section">
+            <div class="side_container">
+                <a href="/viewInfo">{{name_1}}</a>
+                <p>(view more info)</p>
+                <img class="food_image" src="{{image_1}}" alt="food image" class="img-thumbnail">
+            </div>
+            <div class="side_container">
+                <a href="/viewInfo">{{name_2}}</a>
+                <p>(view more info)</p>
+                <img class="food_image" src="{{image_2}}" alt="food image" class="img-thumbnail">
+            </div>
+        </div>
+        <div class="bottom">
+            <p>(Refresh your options!)</p>
+            <a href="/resultsDisplay" class="fas fa-redo fa-7x"></a>
+            <p><a href="/">Start Over!</a></p>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
