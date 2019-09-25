@@ -9,9 +9,9 @@ body, html{
 	background-image: linear-gradient(white, rgb(151, 204, 241))
 }
 
-.bg-primary {
-	background-color: rgb(49, 49, 49)!important;
-	opacity: .85;
+.container{
+	width: 1200px; 
+	margin: 0px auto;
 }
 
 .logo{
@@ -26,15 +26,17 @@ body, html{
 	padding: 5px;
 	font-family: sans-serif;
 }
-.top_section{
-	height: 250px;
+
+.btn{
+	width: 90%;
+	height: 150px;
+	margin-top: 30px;
+	font-size: 50px;
+	box-shadow: 0 6px 16px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19); */
 }
 
-h2 {
-	color: white;
-	text-align: left;
-	display: inline-block;
-	margin: 5px 0px;
+.top_section{
+	height: 250px;
 }
 
 .container{
@@ -53,13 +55,11 @@ h1{
 	font-family: "Arial", "Verdan", sans-serif;
 }
 
-.mid_section{
-	text-align: center;
-}
-
-a{
-	text-decoration: underline;
-	margin-left: 500px;
+h2 {
+	color: white;
+	text-align: left;
+	display: inline-block;
+	margin: 5px 0px;
 }
 
 h3{
@@ -73,14 +73,13 @@ h5{
 	padding-top: 80px;
 }
 
-.btn{
-	display: block;
-	height: 60px;
-	width: 90%;
-	height: 150px;
-	margin-top: 50px;
-	font-size: 50px;
-	box-shadow: 0 6px 16px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+.mid_section{
+	text-align: center;
+}
+
+a{
+	text-decoration: underline;
+	margin-left: 500px;
 }
 
 p{

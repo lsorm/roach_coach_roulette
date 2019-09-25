@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+    <script src="https://kit.fontawesome.com/532d5492ff.js" crossorigin="anonymous"></script>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
+
+</head>
+
+<body>
+    <nav class="header">
+        <div class="side_container">
+            <img class="logo" src="{% static 'images/roach.png'%}" alt="logo">
+            <h2>ROACH COACH ROULETTE</h2>
+        </div>
+        <a class="logout" class="navbar-brand" href="#!">Log Out</a>
+    </nav>
+
+    <div class="container">
+        <div class="top_section">
+            <h1>WELCOME USER!</h1>
+        </div>
+        <div class="mid_section">
+            <div class="side_container">
+                <button type="button" class="btn btn-secondary">Find a Restuarant</button>
+            </div>
+        </div>
+        <div class="favorites">
+            <div>
+                <h3>SAVED</h3>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Restaurant</th>
+                            <th>Food Type</th>
+                            <th>Location</th>
+                            <th><i class="far fa-thumbs-up"></i> OR <i class="far fa-thumbs-down"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Obu Ramen House</th>
+                            <td>Ramen</td>
+                            <td>San Jose, CA</td>
+                            <td><a href="" class="far fa-thumbs-up"></a> OR <a href="" class="far fa-thumbs-down"></a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>FAVORITES</h3>
+            <div>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Restaurant</th>
+                            <th>Food Type</th>
+                            <th>Location</th>
+                            <th>Add a Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Obu Ramen House</th>
+                            <td>Ramen</td>
+                            <td>San Jose, CA</td>
+                            <td><a href="">Add a Note</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
