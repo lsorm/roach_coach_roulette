@@ -60,3 +60,9 @@ def dashboard(request):
 
 def editFaves(request):
     return redirect ('/dashboard')
+<<<<<<< HEAD
+=======
+
+# def optionsSubmit(request):
+#     return HttpResponse('It worked!')
+>>>>>>> 0ef22677624b524e7634f950e89823cd65d8676b
