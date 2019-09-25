@@ -47,6 +47,7 @@ class User(models.Model):
     objects = UserManager()
 
 class Restaurant(models.Model):
+    image = models.CharField(max_length=255, blank=True)
     name = models.CharField(max_length=255)
     desc = models.CharField(max_length=255)
     location = models.CharField(max_length=255)
