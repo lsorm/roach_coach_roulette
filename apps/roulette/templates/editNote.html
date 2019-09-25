@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Edit Notes</title>
+    <script src="https://use.fontawesome.com/74ea2e5771.js"></script>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <Style>
+        * {
+            outline: 0px dotted red;
+            margin: 0px;
+        }
+
+        .side_container {
+            width: 45%;
+            display: inline-block;
+        }
+
+        .main {
+            width: 900px;
+            margin: 0px auto;
+        }
+
+        html,
+        body {
+            height: 100%;
+            background-image: linear-gradient(white, rgb(151, 204, 241))
+        }
+
+        .logo {
+            width: 40px;
+            display: inline-block;
+            margin: 5px;
+            vertical-align: top;
+        }
+
+        .header {
+            background-color: rgb(37, 37, 37);
+            padding: 5px;
+            font-family: sans-serif;
+        }
+
+        .header h2 {
+            color: white;
+            text-align: left;
+            display: inline-block;
+            margin: 5px 0px;
+        }
+
+        h1 {
+            margin: 20px 0px;
+            font-size: 25px;
+            font-family: "Arial", "Verdan", sans-serif;
+        }
+
+        .left {
+            width: 500px;
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .right {
+            width: 350px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        h2 {
+            margin: 20px 0px;
+        }
+
+        h3{
+            margin: 50px auto;
+        }
+
+        ul {
+            color: red;
+        }
+
+        .btn {
+            margin-top: 30px;
+            box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
+        }
+    </Style>
+</head>
+
+<body>
+    <nav class="header">
+        <div class="side_container">
+            <img class="logo" src="{% static 'images/roach.png'%}" alt="logo">
+            <h2>ROACH COACH ROULETTE</h2>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="main">
+            <h3> Restaurant Name HERE</h3>
+            <h3> Restaurant Location HERE</h3>
+            <h1> ADD/EDIT NOTE</h1>
+            <Form method="POST" action="/dashboard">
+                {% csrf_token %}
+                <textarea type="text" name="text" class="form-control" rows="6" placeholder="NOTE VARIABLE HERE" aria-label=""
+                    aria-describedby="basic-addon1"></textarea>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    </div>
+
+</body>

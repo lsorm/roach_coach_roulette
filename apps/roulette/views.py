@@ -32,3 +32,4 @@ def dashboard(request):
 
 def editFaves(request):
     return redirect ('/dashboard')
+
