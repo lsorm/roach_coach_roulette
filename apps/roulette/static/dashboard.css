@@ -1,0 +1,83 @@
+/* #!css */
+* {
+	outline: 0px dotted red;
+	margin: 0px;
+}
+
+body, html{
+    background-image: linear-gradient(white, rgb(151, 204, 241));
+    height: 100%;
+}
+
+.container {
+    width: 1200px;
+    margin: 0px auto;
+}
+
+.logo{
+	width: 40px;
+	display: inline-block;
+	margin: 5px;
+	vertical-align: top;
+}
+
+.header{
+	background-color: rgb(37, 37, 37);
+	padding: 5px;
+    font-family: sans-serif;
+}
+
+.logout {
+    text-decoration: underline;
+    margin-left: 500px;
+}
+
+.mid_section {
+    text-align: center;
+}
+
+.side_container{
+	width: 45%;
+	display: inline-block;
+}
+
+.top_section{
+	height: 75px;
+}
+
+h1{
+    margin: 20px;
+    font-size: 25px;
+	font-family: "Arial", "Verdan", sans-serif;
+}
+
+h2 {
+	color: white;
+	text-align: left;
+	display: inline-block;
+	margin: 5px 0px;
+}
+
+h3{
+    font-style: italic;
+    margin-top: 40px;
+}
+
+.favorites{
+    padding: 40px;
+}
+
+
+p{
+	text-align: center;
+	margin-top: 20px;
+}
+
+
+.btn {
+    width: 90%;
+    height: 150px;
+    margin-top: 30px;
+    font-size: 50px;
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+}
