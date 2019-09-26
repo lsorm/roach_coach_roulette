@@ -2,4 +2,9 @@ __pycache__/
 .vscode/
 venv/
 db.sqlite3
+<<<<<<< HEAD
 *code.py
+=======
+notes.txt
+*.pyc
+>>>>>>> 0e1588226bc77ed73c354456ba650d517d348323

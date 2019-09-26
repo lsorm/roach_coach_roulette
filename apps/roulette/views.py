@@ -148,6 +148,3 @@ def dashboard(request):
 
 def editFaves(request):
     return redirect ('/dashboard')
-
-def optionsSubmit(request):
-    return HttpResponse('It worked!')
