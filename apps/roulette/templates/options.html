@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="Demonstration of Django Apps and Sessions">
+       
+        {% load static %}
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{% static 'roulette/options.css' %}">
+
+        <!--Font Awesome!-->
+        <script src="https://kit.fontawesome.com/ab40e6b488.js" crossorigin="anonymous"></script>
+
+        <!-- Required meta tags -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    </head>
+    <body>
+        <div id="container">
+            <form action="/options_submit" method="POST">
+                {% csrf_token %}
+                <div id="box2" class="box">
+                    <h2>What are you Jonesin' for?</h2>
+                    <button type="button" class="btn btn-info category">American</button>
+                    <button type="button" class="btn btn-info category">Asian</button>
+                    <button type="button" class="btn btn-info category">Mediterranean</button>
+                    <button type="button" class="btn btn-info category">Latin American</button>
+                    <input type="hidden" value="" name="category" id="category">
+                </div>
+                <div id="box3" class="box">
+                    <h2>Money, money, mon-ey (mon-ey)</h2>
+                    <button type="button" class="btn btn-success price one"><i class="fas fa-dollar-sign fa-2x"></i></button>
+                    <button type="button" class="btn btn-success price two"><i class="fas fa-dollar-sign fa-2x"></i><i class="fas fa-dollar-sign fa-2x"></i></button>
+                    <button type="button" class="btn btn-success price three"><i class="fas fa-dollar-sign fa-2x"></i><i class="fas fa-dollar-sign fa-2x"></i><i class="fas fa-dollar-sign fa-2x"></i></button>
+                    <input type="hidden" value="" name="price" id="price">
+                </div>
+                <div id="box1" class="box">
+                    <h2>How far will you go for some grubbage?</h2>
+                    <button type="submit" class="btn btn-danger distance"><span>1</span> mi.</button>
+                    <button type="submit" class="btn btn-danger distance"><span>5</span> mi.</button>
+                    <button type="submit" class="btn btn-danger distance"><span>10</span> mi.</button>
+                    <input type="hidden" value="" name="distance" id="distance">
+                </div>
+            </form>
+        </div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="{% static 'roulette/script.js' %}"></script>
+    </body>
+</html>

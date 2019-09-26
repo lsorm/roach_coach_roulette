@@ -1,0 +1,35 @@
+#GUNICORN CONFIG
+
+[Unit]
+Description=gunicorn daemon
+After=network.target
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/roach_coach_roulette
+ExecStart=/home/ubuntu/roach_coach_roulette/env/bin/gunicorn --workers 3 --bind unix:/home/ubuntu/roach_coach_roulette/roach_coach_roulett.sock roach_coach_roulett.wsgi:application
+[Install]
+WantedBy=multi-user.target
+
+
+
+
+
+
+#NGINX Configurations
+ sudo vim /etc/nginx/sites-available/roach_coach_roulette
+
+ text:
+
+ server {
+   listen 80;
+   server_name 3.19.217.204;
+   location = /favicon.ico { access_log off; log_not_found off; }
+   location /static/ {
+       root /home/ubuntu/roach_coach_roulette;
+   }
+   location / {
+       include proxy_params;
+       proxy_pass http://unix:/home/ubuntu/roach_coach_roulette/roach_coach_roulett.sock;
+   }
+ }

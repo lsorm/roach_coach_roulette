@@ -1,0 +1,88 @@
+/* #!css */
+* {
+	outline: 0px dotted red;
+	margin: 0px;
+}
+
+body, html{
+	height: 100%;
+	background-image: linear-gradient(white, rgb(151, 204, 241))
+}
+
+.container{
+	width: 1200px; 
+	margin: 0px auto;
+}
+
+.logo{
+	width: 40px;
+	display: inline-block;
+	margin: 5px;
+	vertical-align: top;
+}
+
+.header{
+	background-color: rgb(37, 37, 37);
+	padding: 5px;
+	font-family: sans-serif;
+}
+
+.btn{
+	width: 90%;
+	height: 150px;
+	margin-top: 30px;
+	font-size: 50px;
+	box-shadow: 0 6px 16px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19); */
+}
+
+.top_section{
+	height: 250px;
+}
+
+.container{
+	width: 1200px; 
+	margin: 0px auto;
+	padding: 95px;
+}
+
+.side_container{
+	width: 45%;
+	display: inline-block;
+}
+
+h1{
+	font-size: 25px;
+	font-family: "Arial", "Verdan", sans-serif;
+}
+
+h2 {
+	color: white;
+	text-align: left;
+	display: inline-block;
+	margin: 5px 0px;
+}
+
+h3{
+	text-align: center;
+	font-size: 50px;
+}
+
+h5{
+	text-align: center;
+	font-style: italic;
+	padding-top: 80px;
+}
+
+.mid_section{
+	text-align: center;
+}
+
+a{
+	text-decoration: underline;
+	margin-left: 500px;
+}
+
+p{
+	text-align: center;
+	margin-top: 20px;
+}
