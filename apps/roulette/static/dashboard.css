@@ -7,6 +7,7 @@
 body, html{
     background-image: linear-gradient(white, rgb(151, 204, 241));
     height: 100%;
+    overflow: auto;
 }
 
 .container {
@@ -25,11 +26,14 @@ body, html{
 	background-color: rgb(37, 37, 37);
 	padding: 5px;
     font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
 }
 
 .logout {
     text-decoration: underline;
-    margin-left: 500px;
+    font-size: 20px;
+    padding: 5px;
 }
 
 .mid_section {
@@ -75,9 +79,9 @@ p{
 
 
 .btn {
-    width: 90%;
-    height: 150px;
+    width: 350px;
+    height: 100px;
     margin-top: 30px;
-    font-size: 50px;
+    font-size: 40px;
     box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
 }
