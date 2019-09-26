@@ -5,7 +5,7 @@ from . models import *
 import bcrypt
 from yelpapi import YelpAPI
 import random
-from secrete.py import *
+from code import *
 
 def index(request):
     return render(request, 'index.html')
