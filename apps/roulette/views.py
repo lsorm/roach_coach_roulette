@@ -5,6 +5,7 @@ from . models import *
 import bcrypt
 from yelpapi import YelpAPI
 import random
+from SECRETE.py import *
 
 def index(request):
     return render(request, 'index.html')
@@ -36,7 +37,6 @@ def resultsDisplay(request):
     category1 = random.choice(american)
     category2 = random.choice(mediterranean)
 
-    api_key = "XgZ3ai6aLFrO_WdFuu7r_p-aPOncH1WS3sDskgjJEPGYnyEVFUHi-05YeT3zAN59Q10ca8hZJZTHmS8NF46w8j4-F-qdsrtL3M8HwGdu_JOVUwq0nOSvC3s_4U2KXXYx"
     yelp_api = YelpAPI(api_key)
     search_results1 = yelp_api.search_query(categories=category1, location='95112', radius=10000, price=2, limit=20)
     search_results2 = yelp_api.search_query(categories=category2, location='95112', radius=10000, price=2, limit=20)
