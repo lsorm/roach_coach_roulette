@@ -5,6 +5,7 @@ from . models import *
 import bcrypt
 from yelpapi import YelpAPI
 import random
+from code import *
 
 def index(request):
     return render(request, 'index.html')
@@ -147,6 +148,3 @@ def dashboard(request):
 
 def editFaves(request):
     return redirect ('/dashboard')
-
-def optionsSubmit(request):
-    return HttpResponse('It worked!')
