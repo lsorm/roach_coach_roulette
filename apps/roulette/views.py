@@ -121,7 +121,7 @@ def newUser(request):
                                         email = request.POST["email"],
                                         username=request.POST['email'],
                                         password=pw_hash)
-        return redirect(f'/dashboard/{new_user.id}')
+        return redirect(f'/dashboard')
     return redirect ('/dashboard')
 
 def login(request):
