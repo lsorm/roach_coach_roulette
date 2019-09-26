@@ -13,5 +13,4 @@ urlpatterns = [
     url(r'^newUser$', views.newUser),# to create the new user
     url(r'^dashboard$', views.dashboard), # to display their personal dashboard
     url(r'^edit$', views.editFaves), # to edit the user's favorites to add notes.
-    url(r'^options_submit$', views.optionsSubmit)
 ]

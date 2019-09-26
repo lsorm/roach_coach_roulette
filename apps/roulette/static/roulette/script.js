@@ -22,7 +22,7 @@ $('button').click(function() {
             }
             else if ($(this).offset().left > $('#container').width()) {
                 $(this).animate({
-                    left: '50%',
+                    left: '25%',
                 }, 500 );
             }
             else {
