@@ -17,6 +17,7 @@
         <nav class="navbar fixed-top navbar-dark bg-primary">
             <h2>ROACH COACH ROULETTE</h2>
             <div>
+                <a class="navbar-brand" href="/resultsDisplay">Back</a>
                 <a class="navbar-brand" href="#!">Dashboard</a>
                 <a class="navbar-brand" href="#!">Log In</a>
             </div>
@@ -25,21 +26,20 @@
 
     <div class="container">
         <div class="top_view">
-            <h1>{{request.session.result_1_name}}</h1>
-            <h4>{{request.session.result_1_desc}}</h4>
+            <h1>{{name}}</h1>
+            <h4>{{desc}}</h4>
         </div>
         <div class="mid_section">
             <div class="side_container">
-                <img class="food_image" src="{{request.session.result_1_image}}" alt="food image" class="img-thumbnail">
-                <p>{{request.session.phone_1}}</p>
-                {% for item in request.session.location_1 %}
+                <img class="food_image" src="{{image}}" alt="food image" class="img-thumbnail">
+                <p>{{phone}}</p>
+                {% for item in location %}
                 <p>{{item}}</p>
                 {% endfor %}
             </div>
         </div>
         <div class="bottom">
-            <p>(Refresh your options!)</p>
-            <p><a href="/">Start Over!</a></p>
+            <p><a href="/loginReg">Save for later</a></p>
         </div>
     </div>
 

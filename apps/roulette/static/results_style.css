@@ -46,6 +46,10 @@ h2 {
 
 .side_container a{
     color: rgb(19, 68, 78);
+    font-size: 20px;
+}
+.side_container p{
+	color: rgb(19, 68, 78);
     text-decoration: none;
     font-size: 20px;
 }
@@ -60,7 +64,7 @@ h1{
 }
 
 .side_container{
-    padding: 15px;
+	padding: 15px;
 }
 
 .food_image{

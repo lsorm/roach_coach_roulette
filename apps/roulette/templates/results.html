@@ -10,6 +10,48 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'results_style.css' %}">
 
+    <style>
+        .button {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: rgb(19, 68, 78);
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 25%px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 10%;
+        }
+    
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+    
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+    
+        .button:hover span {
+            padding-right: 25px;
+        }
+    
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -17,8 +59,8 @@
         <nav class="navbar fixed-top navbar-dark bg-primary">
             <h2>ROACH COACH ROULETTE</h2>
             <div>
-                <a class="navbar-brand" href="#!">Dashboard</a>
-                <a class="navbar-brand" href="#!">Log In</a>
+                <a class="navbar-brand" href="/dashboard">Dashboard</a>
+                <a class="navbar-brand" href="/loginReg">Log In</a>
             </div>
         </nav>
     </div>
@@ -29,20 +71,18 @@
         </div>
         <div class="mid_section">
             <div class="side_container">
-                <a href="/viewInfo">{{name_1}}</a>
-                <p>(view more info)</p>
-                <img class="food_image" src="{{image_1}}" alt="food image" class="img-thumbnail">
+                <a href="/viewInfo/1" value="option_1">{{request.session.result_1_name}}</a>
+                <img class="food_image" src="{{request.session.result_1_image}}" alt="food image" class="img-thumbnail">
             </div>
             <div class="side_container">
-                <a href="/viewInfo">{{name_2}}</a>
-                <p>(view more info)</p>
-                <img class="food_image" src="{{image_2}}" alt="food image" class="img-thumbnail">
+                <a href="/viewInfo/2" value="option_2">{{request.session.result_2_name}}</a>
+                <img class="food_image" src="{{request.session.result_2_image}}" alt="food image" class="img-thumbnail">
             </div>
         </div>
         <div class="bottom">
+            <a href="/roulett" class="fas fa-redo fa-7x"></a>
             <p>(Refresh your options!)</p>
-            <a href="/resultsDisplay" class="fas fa-redo fa-7x"></a>
-            <p><a href="/">Start Over!</a></p>
+            <a  href="/"><button class="button" style="vertical-align:middle"><span>Start Over! </span></button></a>
         </div>
     </div>
 
