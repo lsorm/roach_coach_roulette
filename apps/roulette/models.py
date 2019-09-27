@@ -21,6 +21,10 @@ class UserManager(models.Manager):
         if postData["confirm_PW"] != postData["password"]:
             errors["password"]="Password does not match!!"
 
+        user = User.objects.filter(email=postData['email'])
+        if user:
+            errors['already_registered'] = "Email is already registered. Please log in."
+
         return errors
 
     def login_validator(self, postData):
