@@ -12,9 +12,12 @@ urlpatterns = [
     url(r'^loginReg$',views.loginReg),# to login and registration page
     url(r'^newUser$', views.newUser),# to create the new user
     url(r'^dashboard$', views.dashboard), # to display their personal dashboard
-    url(r'^edit$', views.editFaves), # to edit the user's favorites to add notes.
+    url(r'^edit/(?P<fav_id>\d+)$', views.edit), # to edit the user's favorites to add notes.
+    url(r'^edit_note/(?P<fav_id>\d+)$', views.edit_note),
     url(r'^refresh$', views.refresh), # to refresh the options
     url(r'^login$', views.login), #login
     url(r'reset$', views.reset), # clear cookies
-    url(r'^save/(?P<choice_id>\d+)$', views.save) # save for later
+    url(r'^save/(?P<choice_id>\d+)$', views.save), # save for later
+    url(r'^move_to_fav/(?P<save_id>\d+)$', views.move_to_fav),
+    url(r'remove_from_saved/(?P<save_id>\d+)$', views.remove_from_saved)
 ]

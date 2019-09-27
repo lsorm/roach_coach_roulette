@@ -146,7 +146,8 @@ def viewInfo(request, result_id):
         'image': img,
         'desc': desc,
         'location': loc,
-        'phone': phone
+        'phone': phone,
+        'result_choice': result_choice
     }
     return render (request, 'view.html', context)
 
@@ -156,12 +157,12 @@ def save(request, choice_id):
     if choice_id == '1':
         restaurant = Restaurant.objects.create(image=request.session['result_1_image'], name=request.session['result_1_name'],
         desc=request.session['result_1_desc'], location=request.session['location_1'])
-        user.favorites.add(restaurant)
+        user.saved.add(restaurant)
 
     if choice_id == '2':
         restaurant = Restaurant.objects.create(image=request.session['result_2_image'], name=request.session['result_2_name'],
         desc=request.session['result_2_desc'], location=request.session['location_2'])
-        user.favorites.add(restaurant)
+        user.saved.add(restaurant)
 
     return redirect('/dashboard')
 
@@ -169,6 +170,7 @@ def goBack(request):
     return redirect ('/')
 
 def loginReg(request):
+
     return render(request, 'loginReg.html')
 
 def newUser(request):
@@ -187,6 +189,10 @@ def newUser(request):
                                         username=request.POST['email'],
                                         password=pw_hash.decode('utf-8'))
         request.session['user_id'] = new_user.id
+
+        if request.session['choice_id']:
+            return redirect('save/'+request.session['choice_id'])
+
         return redirect('/dashboard')
 
 def login(request):
@@ -220,6 +226,7 @@ def dashboard(request):
         context = {
             'user_first_name': user.first_name.upper(),
             'user_favorites': user.favorites.all(),
+            'user_saved': user.saved.all()
         }
 
         return render (request, 'dashboard.html', context)
@@ -227,11 +234,42 @@ def dashboard(request):
         return redirect('/loginReg')
     
 
-def editFaves(request):
-    return redirect ('/dashboard')
+def edit(request,fav_id):
+    restaurant = Restaurant.objects.get(id=fav_id)
+    context = {
+        'restaurant': restaurant,
+        'notes': restaurant.restaurant_name.all()
+    }
+
+    print(context['notes'])
+    return render(request, 'editNote.html', context)
+
+def edit_note(request, fav_id):
+    print(request.POST['text'])
+    restaurant = Restaurant.objects.get(id=fav_id)
+    user = User.objects.get(id=request.session['user_id'])
+    new_note = Note.objects.create(content=request.POST['text'], user=user, restaurant=restaurant)
+    return redirect('/dashboard')
 
 def refresh(request):
     return redirect('/roulette/'+request.session['choice_id'])
+
+def move_to_fav(request, save_id):
+    user = User.objects.get(id=request.session['user_id'])
+    restaurant = Restaurant.objects.get(id=save_id)
+
+    user.saved.remove(restaurant)
+    user.favorites.add(restaurant)
+
+    return redirect('/dashboard')
+
+def remove_from_saved(request, save_id):
+    user = User.objects.get(id=request.session['user_id'])
+    restaurant = Restaurant.objects.get(id=save_id)
+
+    user.saved.remove(restaurant)  
+
+    return redirect('/dashboard')  
 
 def reset(request):
     request.session.clear()

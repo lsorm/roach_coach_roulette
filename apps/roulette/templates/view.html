@@ -42,7 +42,7 @@
             {% if 'user_id' not in request.session %}
             <p><a href="/loginReg">Save for later</a></p>
             {% else %}
-                {% if request.session.choice_id == '1' %}
+                {% if result_choice == '1' %}
                     <p><a href="/save/1">Save for later</a></p>
                 {% else %}
                     <p><a href="/save/2">Save for later</a></p>
